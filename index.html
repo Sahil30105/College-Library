@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>website</title>
+    <style>
+      *{
+        margin: 0;
+        font-weight: 900;
+      }
+      table {
+        height: 100%;
+        width: 100%;
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      .custom a {
+        text-decoration: none;
+        color: black;
+      }
+
+      #ptr{
+        cursor: pointer;
+        font-weight: 900;
+        font-size: larger;
+      }
+
+      #ptr:hover{
+        background-color: yellow;
+        /* text-decoration: underline; */
+      }
+      
+    </style>
+
+    <script>
+      function renderPage(pageNumber) {
+        var iframe = document.getElementById("pageFrame");
+        if (pageNumber === 1) {
+          iframe.src = "./pages/fybscs.html";
+        } else if (pageNumber === 2) {
+          iframe.src = "./pages/sybscs.html";
+        } else if (pageNumber === 3) {
+          iframe.src = "./pages/tybscs.html";
+        } 
+        else if (pageNumber === 0) {
+          iframe.src = "./pages/desc.html";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <table border="1" cellpadding="30">
+        <tr>
+          <td style="width: 12%; height: 5%">
+            <img src="./images/logo.jpeg" style="width: 100%; height: 100%" />
+          </td>
+          <td
+            style="width: 80%; height: 80%; background-color: purple; font-size: 45px;"
+            colspan="4">
+            V.K. Krishna Menon College
+          </td>
+        </tr>
+
+        <tr style="background-color: #eaf27c">
+          <td id ="ptr" href="javascript:void(0);" onclick="renderPage(0)">
+            <div class="custom" >
+              <a  >HOME</a>
+            </div>
+          </td>
+
+          <td id ="ptr" onclick="location.href='./pages/exmpl.html'">LOGIN</td>
+          <td id ="ptr" onclick="location.href='./pages/register.html'">REGISTRATION</td>
+          <td id ="ptr" onclick="location.href='./pages/catalogue.html'">CATALOGUE</td>
+          <td id ="ptr">CART</td>
+        </tr>
+
+        <tr style="background-color: #eaf27c">
+          <td>
+            <div class="custom">
+              <a
+                href="javascript:void(0);"
+                onclick="renderPage(1)"
+                >FYBSC C.S.</a
+              >
+              <br /><br /><br /><br /><br /><br /><a
+                href="javascript:void(0);"
+                onclick="renderPage(2)"
+                >SYBSC C.S.</a
+              >
+              <br /><br /><br /><br /><br /><br /><a
+                href="javascript:void(0);"
+                onclick="renderPage(3)"
+                >TYBSC C.S.</a
+              >
+            </div>
+            <br /><br /><br /><br />
+          </td>
+
+          <td
+            id="descriptionArea"
+            style="text-align: left; font-size: 35px; background-color: #a3a39d"
+            colspan="4"
+            rowspan="4"
+          >
+            <iframe
+              id="pageFrame"
+              frameborder="0"
+              width="100%"
+              height="500"
+            ></iframe>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
+</html>
